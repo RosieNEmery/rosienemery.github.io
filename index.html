@@ -19,7 +19,8 @@
     <link href="./site.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body class="" onload="startSlide()"><header>
+  <body class=""><header>
+
     <div class ="row">
       <div class="left-nav">
         <a href="./index.html">Rosie Emery</a>
@@ -36,36 +37,36 @@
   <div class="slideshow-container" onmouseleave="resumeSlides.call()"
     onmouseover="pauseSlides()">
 
-  <div class="slideshow slide-fade-in" onclick="getAccessSlide(this,
-    './work_pages/humanising.html', '#000000')">
-    <img class = "slideshow-image" src="Images/Humanising_icon.jpg">
-    <div class = "slideshow-text">HUMANISING AUTONOMY</div>
+    <div class="slideshow slide-fade-in" onclick="getAccessSlide(this,
+      './work_pages/humanising.html', '#000000')">
+      <img class = "slideshow-image" src="Images/Humanising_icon.jpg">
+      <div class = "slideshow-text">HUMANISING AUTONOMY</div>
+    </div>
+
+    <div class="slideshow slide-fade-in">
+      <a href="./work_pages/IBM_2020.html">
+        <img class = "slideshow-image" src="Images/IBM_icon_homepage.png">
+      </a>
+      <div class = "slideshow-text">IBM 2020</div>
+    </div>
+
+    <div class="slideshow slide-fade-in" onclick="getAccessSlide(this,
+      './work_pages/material_matters.html', '#f5f5f5')">
+        <img class = "slideshow-image" src="Images/Material_Sea_icon.png">
+        <div class = "slideshow-text" style="color:#f5f5f5;">MATERIAL MATTERS</div>
+    </div>
+
   </div>
 
-  <div class="slideshow slide-fade-in">
-    <a href="./work_pages/IBM_2020.html">
-      <img class = "slideshow-image" src="Images/IBM_icon_homepage.png">
-    </a>
-    <div class = "slideshow-text">IBM 2020</div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
   </div>
 
-  <div class="slideshow slide-fade-in" onclick="getAccessSlide(this,
-    './work_pages/material_matters.html', '#f5f5f5')">
-      <img class = "slideshow-image" src="Images/Material_Sea_icon.png">
-      <div class = "slideshow-text" style="color:#f5f5f5;">MATERIAL MATTERS</div>
-  </div>
-
-</div>
-
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(0)"></span>
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-</div>
-
-<script src="scripts/slideshow.js"></script>
+  <script src="scripts/slideshow.js"></script>
 
 </body>
 </html>

@@ -5,8 +5,6 @@ var password_entered;
 
 var length = 2000;
 
-//startSlide();
-
 function startSlide(){
   var slides = document.getElementsByClassName("slideshow");
   var dots = document.getElementsByClassName("dot");
@@ -31,6 +29,8 @@ function startSlide(){
     endSlide(2000);
   },2000);
 }
+
+document.addEventListener("DOMContentLoaded", startSlide());
 
 function endSlide(duration) {
   var slides = document.getElementsByClassName("slideshow");
