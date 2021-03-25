@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+      name="viewport">
+
+    <meta name="description" content="Freelance Houdini artist.">
+
+    <title>Work - Rosie Emery</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link href="./site.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="" onload="checkPassword()"><header>
+    <div class ="row">
+      <div class="left-nav">
+        <a href="./index.html">Rosie Emery</a>
+      </div>
+
+      <ul class = "menu">
+        <li><a href="./work.html">Work</a></li>
+        <li><a href="./reel.html">Reel</a></li>
+        <li><a href="./about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container" style= "margin-top:10%;">
+
+    <div class = "grid-image" style = " width:75.85%;" onclick="getAccess('./work_pages/humanising.html')">
+      <img class = "work-preview fade-in" src = "./Images/Humanising_icon.jpg">
+      <div class = "overlay">
+          <div class = "overlay-text" style= "top: 42.5%;">HUMANISING AUTONOMY</div>
+          <div class = "overlay-text password" style= "top: 42.5%;">PASSWORD:
+            <input type="text" class = "small-password-box" value=""id="passInput"
+              onkeydown="checkEnter(event,'./work_pages/humanising.html')">
+          </div>
+      </div>
+    </div>
+
+    <div class = "grid-image" style = "left: 49.9%; margin-top: 19%;">
+      <img class = "work-preview fade-in" src = "./Images/Painting_2.0_icon.png">
+      <a class = "overlay" href="./work_pages/paint_tool_second.html">
+          <div class = "overlay-text">PAINT TOOL :: 2.0</div>
+      </a>
+    </div>
+
+    <div class = "grid-image" style = "left: -0.75%; margin-top: 10.25%;">
+      <img class = "work-preview fade-in" src = "./Images/Zoo_icon.png">
+      <a class = "overlay" href="./work_pages/zooaszoo.html">
+          <div class = "overlay-text">ZOOASZOO.COM</div>
+      </a>
+    </div>
+
+    <div class = "grid-image" style = " left: 24.625%; margin-top: 13.75%;  width:63.25%">
+      <img class = "work-preview-portrait fade-in" src = "./Images/IBM_icon_crop.png">
+      <a class = "overlay" href="./work_pages/IBM_2020.html">
+          <div class = "overlay-text">IBM 2020</div>
+      </a>
+    </div>
+
+    <div class = "grid-image" style = "left: 37.25%; margin-top: 14.75%; width:75.75%"
+      onclick="getAccess('./work_pages/material_matters.html')">
+      <img class = "work-preview fade-in" src = "./Images/Material_Sea_icon.png">
+      <div class = "overlay">
+          <div class = "overlay-text" style= "top: 42.5%;">MATERIAL MATTERS</div>
+          <div class = "overlay-text password" style= "top: 42.5%;">PASSWORD:
+            <input type="text" class = "small-password-box" value=""id="passInput"
+              onkeydown="checkEnter(event,'./work_pages/material_matters.html')">
+          </div>
+      </div>
+    </div>
+
+    <div class = "grid-image" style = "margin-top: 17.5%; left: -0.7%">
+      <img class = "work-preview fade-in" src = "./Images/Painting_icon.png">
+      <a class = "overlay" href="./work_pages/paint_tool.html">
+          <div class = "overlay-text">PAINT TOOL :: 1.0</div>
+      </a>
+    </div>
+
+    <div class = "grid-image" style = "margin-top: 14.25%; left: 24.6%;">
+      <img class = "work-preview fade-in" src = "./Images/Envision_icon_crop.png">
+      <a class = "overlay" href="./work_pages/envision.html">
+          <div class = "overlay-text">ENVISION</div>
+      </a>
+    </div>
+
+    <div class = "grid-image" style = "margin-top: 17.5%; width:47.5%; left: 32.6%;">
+      <img class = "work-preview fade-in" src = "./Images/Experiments_icon.png">
+      <a class = "overlay" href="./work_pages/experiments.html">
+          <div class = "overlay-text">EXPERIMENTS</div>
+      </a>
+    </div>
+  </div>
+
+<script src="scripts/slideshow.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+      name="viewport">
+
+    <meta name="description" content="Freelance Houdini artist.">
+
+    <title>Paint Tool - Rosie Emery</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link href="../site.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body><header>
+    <div class ="row">
+      <div class="left-nav">
+        <a href="../index.html">Rosie Emery</a>
+      </div>
+
+      <ul class = "menu">
+        <li><a href="../work.html">Work</a></li>
+        <li><a href="../reel.html">Reel</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class = "wall">
+    <h1 class = " about-title project-title">PAINT TOOL</h1>
+
+    <div class = "container">
+
+      <div class = "project-info">
+          <div class = "project-info-item">Personal Project</div><div class = "project-info-item"> </div>
+          <div class = "project-info-item">Date : 2020</div>
+          <div class = "project-info-item">A Houdini setup based on the Aaron Hertzmann’s
+            <a class = "link" href = "https://www.mrl.nyu.edu/publications/painterly98/hertzmann-siggraph98.pdf">
+            paper on painterly rendering</a>.<br><br>
+            Using COPs and vex in Houdini I recreated Hertzmann’s painting algorithm.
+            The input image is blurred and points are trailed along the image’s
+            gradient (calculated in vops); stopping when the colour change in the
+            blurred image passes a threshold. Layers of these trails with different
+            thresholds and blur sizes creates the final image.
+          </div>
+      </div>
+
+    <img class = "project-image fade-in" src="../Images/Painting/paint_06.png">
+
+    <div class="work-row" style="width:100%;padding-bottom:89%;margin-left:0%;">
+      <img class = "project-image fade-in" style = "position: absolute;width:90%;left:10%;top:10%;"
+        src="../Images/Painting/paint_37.png">
+      <div class = "col-3">
+        <img class = "project-small-image fade-in" src="../Images/Painting/paint_gradient.png"
+          style="position: absolute; width:30%;top:10%;">
+        <img class = "project-small-image fade-in" src="../Images/Painting/paint_lines.png"
+          style="position: absolute; width:30%; top: 32%;">
+      </div>
+    </div>
+
+    <p class = "annotation">Image gradient and base lines used to create the effect</p>
+
+    <img class = "project-image fade-in" src="../Images/Painting/paint_13.png">
+    <img class = "project-image fade-in" src="../Images/Painting/paint_34.png">
+    <img class = "project-image fade-in" src="../Images/Painting/paint_46.png">
+  </div>
+
+</body>
+</html>
