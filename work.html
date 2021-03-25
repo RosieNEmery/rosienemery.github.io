@@ -69,7 +69,7 @@
 
     <div class = "grid-image" style = "left: 37.25%; margin-top: 14.75%; width:75.75%"
       onclick="getAccess('./work_pages/material_matters.html')">
-      <img class = "work-preview fade-in" src = "./Images/Material_Sea_icon.png">
+      <img class = "work-preview fade-in lazy" data-src = "./Images/Material_Sea_icon.png">
       <div class = "overlay">
           <div class = "overlay-text" style= "top: 42.5%;">MATERIAL MATTERS</div>
           <div class = "overlay-text password" style= "top: 42.5%;">PASSWORD:
@@ -80,21 +80,21 @@
     </div>
 
     <div class = "grid-image" style = "margin-top: 17.5%; left: -0.7%">
-      <img class = "work-preview fade-in" src = "./Images/Painting_icon.png">
+      <img class = "work-preview fade-in lazy" data-src = "./Images/Painting_icon.png">
       <a class = "overlay" href="./work_pages/paint_tool.html">
           <div class = "overlay-text">PAINT TOOL :: 1.0</div>
       </a>
     </div>
 
     <div class = "grid-image" style = "margin-top: 14.25%; left: 24.6%;">
-      <img class = "work-preview fade-in" src = "./Images/Envision_icon_crop.png">
+      <img class = "work-preview fade-in lazy" data-src = "./Images/Envision_icon_crop.png">
       <a class = "overlay" href="./work_pages/envision.html">
           <div class = "overlay-text">ENVISION</div>
       </a>
     </div>
 
     <div class = "grid-image" style = "margin-top: 17.5%; width:47.5%; left: 32.6%;">
-      <img class = "work-preview fade-in" src = "./Images/Experiments_icon.png">
+      <img class = "work-preview fade-in lazy" data-src = "./Images/Experiments_icon.png">
       <a class = "overlay" href="./work_pages/experiments.html">
           <div class = "overlay-text">EXPERIMENTS</div>
       </a>
@@ -102,6 +102,7 @@
   </div>
 
 <script src="scripts/work.js"></script>
+<script src="scripts/lazy-load.js"></script>
 
 </body>
 </html>

@@ -406,8 +406,8 @@ p {
 
 .project-info {
   display: grid;
-  grid-template-columns: 22.5% 75%;
-  grid-column-gap: 22%;
+  grid-template-columns: 30% 75%;
+  grid-column-gap: 15%;
   width: 80%;
 }
 
