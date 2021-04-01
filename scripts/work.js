@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", checkPassword());
 function checkEnter(event, link) {
   if (event.which == 13 || event.key == "Enter") {
     var password = document.getElementById("passInput").value;
-    if(password == "showreel"){
+    var ascii = String.fromCharCode(115, 104, 111, 119, 114, 101, 101, 108);
+    if(password == ascii){
       window.location.href = link;
 
       if (typeof(Storage) !== "undefined") {
