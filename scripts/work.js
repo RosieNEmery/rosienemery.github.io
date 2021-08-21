@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", checkPassword());
 function checkEnter(event, link) {
   if (event.which == 13 || event.key == "Enter") {
     var password = document.getElementById("passInput").value;
-    var ascii = String.fromCharCode(115, 104, 111, 119, 114, 101, 101, 108);
-    if(password == ascii){
+    if(password == "showreel"){
       window.location.href = link;
 
       if (typeof(Storage) !== "undefined") {
@@ -45,6 +44,16 @@ function getAccess(link) {
   if (typeof(Storage) !== "undefined") {
     if (sessionStorage.password_entered) {
       window.location.href = link;
+    }
+  }
+}
+
+function getArrowAccess(link,alt_link) {
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.password_entered) {
+      window.location.href = link;
+    } else {
+      window.location.href = alt_link;
     }
   }
 }

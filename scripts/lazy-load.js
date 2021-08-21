@@ -1,5 +1,3 @@
-//shamelessly taken from: https://css-tricks.com/the-complete-guide-to-lazy-loading-images/ 
-
 document.addEventListener("DOMContentLoaded", function() {
   var lazyloadImages = document.querySelectorAll("img.lazy");
   var lazyloadThrottleTimeout;

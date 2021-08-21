@@ -19,60 +19,74 @@
     <link href="../site.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body><header>
-    <div class ="row">
-      <div class="left-nav">
-        <a href="../index.html">Rosie Emery</a>
+  <body>
+    <header>
+      <div class ="row">
+        <div class="left-nav">
+          <a href="../index.html">Rosie Emery</a>
+        </div>
+
+        <ul class = "menu">
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../reel.html">Reel</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class = "arrow" style = "float: right; margin-right: 5%;">
+      <a href="./IBM_2020.html">></a>
+    </div>
+    <div class = "arrow" style = "float: left; margin-left: 5%">
+      <a href="./paint_tool_second.html"><</a>
+    </div>
+
+    <div class = "wall">
+      <h1 class = " about-title project-title">ZOOASZOO.COM</h1>
+
+      <div class = "container">
+
+        <div class = "project-info">
+            <div class = "project-info-item">Pentagram</div><div class = "project-info-item"> </div>
+            <div class = "project-info-item">Date : 2018</div>
+            <div class = "project-info-item"> A 3D portfolio website for Altlanta-based
+              creative agency Zoo, view it
+              <a class = link href = "https://zooaszoo.com/">here</a>.<br><br>
+              I worked as a front-end developer creating threejs scenes, procedural
+              animations and shaders. This project also involved using Aframe
+              (a framework for web VR) to capture camera motion.
+            </div>
+        </div>
+
+      <div class = vimeo-video>
+        <iframe src="https://player.vimeo.com/video/385300302?color=ffffff&byline=0"
+        width="1152" height="648" frameborder="0" allowfullscreen></iframe>
       </div>
 
-      <ul class = "menu">
-        <li><a href="../work.html">Work</a></li>
-        <li><a href="../reel.html">Reel</a></li>
-        <li><a href="../about.html">About</a></li>
-      </ul>
-    </div>
-  </header>
+      <img class = "project-image fade-in" src="../Images/Zoo/zoo_start.gif">
+      <img class = "project-image fade-in lazy" data-src="../Images/Zoo/zoo_blob.gif">
+      <img class = "project-image fade-in lazy" data-src="../Images/Zoo/noodle_02.gif">
 
-  <div class = "wall">
-    <h1 class = " about-title project-title">ZOOASZOO.COM</h1>
-
-    <div class = "container">
-
-      <div class = "project-info">
-          <div class = "project-info-item">Pentagram</div><div class = "project-info-item"> </div>
-          <div class = "project-info-item">Date : 2018</div>
-          <div class = "project-info-item"> A 3D portfolio website for Altlanta-based
-            creative agency Zoo, view it
-            <a class = link href = "https://zooaszoo.com/">here</a>.<br><br>
-            I worked as a front-end developer creating threejs scenes, procedural
-            animations and shaders. This project also involved using Aframe
-            (a framework for web VR) to capture camera motion.
-          </div>
+      <div class = vimeo-video>
+        <iframe title="vimeo-player" src="https://player.vimeo.com/video/386494118"
+          width="1152" height="648" frameborder="0" allowfullscreen>
+        </iframe>
       </div>
+      <p class = "annotation">Tests from the development process</p>
 
-    <div class = vimeo-video>
-      <iframe src="https://player.vimeo.com/video/385300302?color=ffffff&byline=0"
-      width="1152" height="648" frameborder="0" allowfullscreen></iframe>
+      <p class = "annotation">Full documentation at <a class = link
+        href = "https://www.pentagram.com/work/zoo/story">pentagram.com/work/zoo/story</a>
+      </p>
+
     </div>
 
-    <img class = "project-image fade-in" src="../Images/Zoo/zoo_start.gif">
-    <img class = "project-image fade-in lazy" data-src="../Images/Zoo/zoo_blob.gif">
-    <img class = "project-image fade-in lazy" data-src="../Images/Zoo/noodle_02.gif">
+    <script src="../scripts/lazy-load.js"></script>
+    <script src="../scripts/scroll-anim.js"></script>
 
-    <div class = vimeo-video>
-      <iframe title="vimeo-player" src="https://player.vimeo.com/video/386494118"
-        width="1152" height="648" frameborder="0" allowfullscreen>
-      </iframe>
-    </div>
-    <p class = "annotation">Tests from the development process</p>
+  </body>
 
-    <p class = "annotation">Full documentation at <a class = link
-      href = "https://www.pentagram.com/work/zoo/story">pentagram.com/work/zoo/story</a>
-    </p>
+  <footer>
+    <a class = "link" href="mailto:rosie.n.emery@gmail.com">rosie.n.emery@gmail.com</a>
+  </footer>
 
-  </div>
-
-  <script src="../scripts/lazy-load.js"></script>
-
-</body>
 </html>

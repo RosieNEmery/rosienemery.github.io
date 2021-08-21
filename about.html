@@ -19,7 +19,7 @@
     <link href="./site.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body class=""><header>
+  <body><header>
     <div class ="row">
       <div class="left-nav">
         <a href="./index.html">Rosie Emery</a>
@@ -33,15 +33,18 @@
     </div>
   </header>
 
+  <!--<div id = "canvas-container">-->
+    <canvas id = "drawing-surface" style="position:absolute; z-index: 0;"></canvas>
+  <!--</div>-->
+
   <img class="fade-in about-image" src="./Images/About.png">
 
-
   <div class = "wall">
-    <p>Rosie Emery is a digital & 3D artist based in London.<br><br>
+    <p>Rosie Emery is a digital 3D artist based in London.<br><br>
       Since completing her studies in <em>Computer Animation and Visualisation</em>
       in 2017, she has since gone on to work as a technical artist/3D artist;
       developing her skills in Houdini and learning webgl and TouchDesigner along the way.<br><br>
-      Rosie is now currently working as a freelance Houdini technical artist/3D Artist.</p>
+      Rosie is now currently working as a freelance technical artist/3D Artist.</p>
 
     <h3 class = "about-title" style="margin-top:70px">EXPERIENCE</h3>
 
@@ -60,11 +63,49 @@
     </div>
 
     <h3 class = "about-title" style="margin-top:70px" >CONTACT</h3>
-    <p>+44 78897 41693 </p>
     <a class = "col-3 link" href="mailto:rosie.n.emery@gmail.com">rosie.n.emery@gmail.com</a>
     <div style = "margin-bottom: 10%"></div>
   </div>
 
+    <!-- vertex shader -->
+  <script  id="vertex-shader-3d" type="x-shader/x-vertex">
+  attribute vec4 a_position;
 
-</body>
+  uniform vec2 u_res;
+  uniform vec2 u_trans;
+
+  varying vec4 v_color;
+
+  void main() {
+    vec2 position = a_position + u_trans;
+
+    // convert the position from pixels to 0.0 to 1.0
+    vec2 zeroToOne = position / u_res;
+
+    // convert from 0->1 to 0->2
+    vec2 zeroToTwo = zeroToOne * 2.0;
+
+    // convert from 0->2 to -1->+1 (clipspace)
+    vec2 clipSpace = zeroToTwo - 1.0;
+
+    gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
+    v_color = vec4(1.0, 0.0, 0.0, 1.0);
+  }
+  </script>
+  <!-- fragment shader -->
+  <script  id="fragment-shader-3d" type="x-shader/x-fragment">
+  precision mediump float;
+
+  varying vec4 v_color;
+
+  void main() {
+     gl_FragColor = v_color;
+  }
+  </script>
+
+  <script src = "https://threejs.org/build/three.js"></script>
+  <script src = "scripts/ripples.js"></script>
+
+  </body>
+
 </html>

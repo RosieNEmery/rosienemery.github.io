@@ -19,80 +19,92 @@
     <link href="../site.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body><header>
-    <div class ="row">
-      <div class="left-nav">
-        <a href="../index.html">Rosie Emery</a>
+  <body>
+    <header>
+      <div class ="row">
+        <div class="left-nav">
+          <a href="../index.html">Rosie Emery</a>
+        </div>
+
+        <ul class = "menu">
+          <li><a href="../work.html">Work</a></li>
+          <li><a href="../reel.html">Reel</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class = "arrow" style = "float: right; margin-right: 5%;">
+      <a href="./material_matters.html">></a>
+    </div>
+    <div class = "arrow" style = "float: left; margin-left: 5%">
+      <a href="./zooaszoo.html"><</a>
+    </div>
+
+    <div class = "wall">
+      <h1 class = " about-title project-title">IBM 2020</h1>
+
+      <div class = "container">
+
+        <div class = "project-info">
+            <div class = "project-info-item">FIELD.io</div><div class = "project-info-item"> </div>
+            <div class = "project-info-item">Date : 2019 / 2020</div>
+            <div class = "project-info-item"> A series of audio reactive animations
+              for the digital IBM Think 2020 conference.<br><br>
+              I worked as a Houdini artist for the duration of the project across
+              the whole pipeline, starting with R&D for audio driven geometry
+              creation to developing design iterations and eventually creating
+              animations with the final system. I was also tasked with the majority
+              of the rendering and post for the final stills and animations, using
+              Photoshop and After Effects for the latter.
+            </div>
+        </div>
+
+      <div class = vimeo-video>
+        <iframe src="https://player.vimeo.com/video/425142339?color=ffffff&byline=0"
+          width="1152" height="648" frameborder="0" allow="autoplay; fullscreen"
+          allowfullscreen>
+        </iframe>
       </div>
 
-      <ul class = "menu">
-        <li><a href="../work.html">Work</a></li>
-        <li><a href="../reel.html">Reel</a></li>
-        <li><a href="../about.html">About</a></li>
-      </ul>
-    </div>
-  </header>
+      <img class = "project-image fade-in" src="../Images/IBM_2020/IBM_crop_01.jpg">
 
-  <div class = "wall">
-    <h1 class = " about-title project-title">IBM 2020</h1>
+      <img class = "project-image project-video fade-in" src="../Images/IBM_2020/ibm_high.gif">
 
-    <div class = "container">
+      <img class = "project-image fade-in" src="../Images/IBM_2020/IBM_crop_03.png">
 
-      <div class = "project-info">
-          <div class = "project-info-item">FIELD.io</div><div class = "project-info-item"> </div>
-          <div class = "project-info-item">Date : 2019 / 2020</div>
-          <div class = "project-info-item"> A series of audio reactive animations
-            for the digital IBM Think 2020 conference.<br><br>
-            I worked as a Houdini artist for the duration of the project across
-            the whole pipeline, starting with R&D for audio driven geometry
-            creation to developing design iterations and eventually creating
-            animations with the final system. I was also tasked with the majority
-            of the rendering and post for the final stills and animations, using
-            Photoshop and After Effects for the latter.
-          </div>
+      <div class = "work-row" style = "width:100%; padding-bottom:105%; margin-left:0%;">
+        <img class = "project-image fade-in lazy" style = "position: absolute; width:65%; left:5%; top:0%"
+          data-src="../Images/IBM_2020/process_02.png">
+        <img class = "project-image fade-in lazy" style = "position: absolute; width:80%; left:10%; top:41%"
+          data-src="../Images/IBM_2020/process_01.png">
+        <img class = "project-image fade-in lazy" style = "position: absolute; width:40%; left:60%; top:22%"
+          data-src="../Images/IBM_2020/process_03.png">
       </div>
 
-    <div class = vimeo-video>
-      <iframe src="https://player.vimeo.com/video/425142339?color=ffffff&byline=0"
-        width="1152" height="648" frameborder="0" allow="autoplay; fullscreen"
-        allowfullscreen>
-      </iframe>
+      <p class = "annotation">Shape design iterations</p>
+
+      <img class = "project-image project-video fade-in lazy" style="width:70%; margin-left:15%"
+        data-src="../Images/IBM_2020/IBM_visual.png">
+      <p class = "annotation">Design for Field documentation</p>
+
+      <img class = "project-image project-video fade-in lazy"
+        data-src="../Images/IBM_2020/IBM_branding.jpg">
+      <p class = "annotation">IBM's use of the identity in their branding and print</p>
+
+      <p class = "annotation">Full documentation at <a class = link
+        href = "https://www.field.io/project/ibm-think-2020/">www.field.io/project/ibm-think-2020</a>
+      </p>
     </div>
 
-    <img class = "project-image fade-in" src="../Images/IBM_2020/IBM_crop_01.jpg">
+    <script src="../scripts/lazy-load.js"></script>
+    <script src="../scripts/work.js"></script>
+    <script src="../scripts/scroll-anim.js"></script>
 
-    <img class = "project-image project-video fade-in" src="../Images/IBM_2020/ibm_high.gif">
+  </body>
 
-    <img class = "project-image fade-in" src="../Images/IBM_2020/IBM_crop_03.png">
+  <footer>
+    <a class = "link" href="mailto:rosie.n.emery@gmail.com">rosie.n.emery@gmail.com</a>
+  </footer>
 
-    <div class = "work-row" style = "width:100%; padding-bottom:105%; margin-left:0%;">
-      <img class = "project-image fade-in lazy" style = "position: absolute; width:65%; left:5%; top:0%"
-        data-src="../Images/IBM_2020/process_02.png">
-      <img class = "project-image fade-in lazy" style = "position: absolute; width:80%; left:10%; top:41%"
-        data-src="../Images/IBM_2020/process_01.png">
-      <img class = "project-image fade-in lazy" style = "position: absolute; width:40%; left:60%; top:22%"
-        data-src="../Images/IBM_2020/process_03.png">
-    </div>
-
-    <p class = "annotation">Shape design iterations</p>
-
-    <img class = "project-image project-video fade-in lazy" style="width:70%; margin-left:15%"
-      data-src="../Images/IBM_2020/IBM_visual.png">
-    <p class = "annotation">Design for Field documentation</p>
-
-    <img class = "project-image project-video fade-in lazy"
-      data-src="../Images/IBM_2020/IBM_branding.jpg">
-    <p class = "annotation">IBM's use of the identity in their branding and print</p>
-
-
-
-    <p class = "annotation">Full documentation at <a class = link
-      href = "https://www.field.io/project/ibm-think-2020/">www.field.io/project/ibm-think-2020</a>
-    </p>
-
-  </div>
-
-  <script src="../scripts/lazy-load.js"></script>
-
-</body>
 </html>
