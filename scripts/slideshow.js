@@ -143,7 +143,7 @@ function getAccessSlide(element, link, colour) {
     if(pswd_elements.length == 0) {
       var pswd_link = "`"+link+"`";
       var pswd_text = '<div class = "slideshow-password" style="color:'+colour+';">PASSWORD:';
-      var pswd_box = '<input type="text" class = "password-box" style="border-color:'+colour+';" value=""id="passInput" onkeydown="checkKey(event,'+ pswd_link + ',this)"></div>';
+      var pswd_box = '<input type="text" class = "password-box" style="border-color:'+colour+';color:'+colour+';" value=""id="passInput" onkeydown="checkKey(event,'+ pswd_link + ',this)"></div>';
       var pswd_HTML = pswd_text.concat(pswd_box);
 
       slide_ele.insertAdjacentHTML('beforeend', pswd_HTML);
