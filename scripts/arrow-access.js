@@ -5,7 +5,7 @@ function allowAccess(){
 
   var body = document.getElementsByClassName('no-scroll');
   if(body[0]) body[0].classList.remove('no-scroll');
-  window.removeEventListener("touchmove");
+  window.removeEventListener("touchmove", preventDefault);
 
   var pswd_box = document.getElementById('pswd_overlay');
   if(pswd_box) pswd_box.remove();
