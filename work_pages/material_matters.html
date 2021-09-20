@@ -19,7 +19,7 @@
     <link href="../site.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body>
+  <body class = "no-scroll">
     <header>
       <div class ="row">
         <div class="left-nav">
@@ -34,16 +34,15 @@
       </div>
     </header>
 
-    <div class = "arrow" style = "float: right; margin-right: 5%;">
+    <div class = "arrow" style = "right: 5%;">
       <a href="./paint_tool.html">></a>
     </div>
-    <div class = "arrow" style = "float: left; margin-left: 5%">
+    <div class = "arrow" style = "left: 5%">
       <a href="./IBM_2020.html"><</a>
     </div>
 
-    <div class = "wall">
+    <div id = 'page' class = "wall blurred-element">
       <h1 class = " about-title project-title">MATERIAL MATTERS</h1>
-
       <div class = "container">
 
         <div class = "project-info">
@@ -60,40 +59,44 @@
             </div>
         </div>
 
-      <img class = "project-image project-video fade-in" src="../Images/Material_Matters-Bee/bees_render.gif">
-      <img class = "project-image fade-in" src="../Images/Material_Matters-Bee/Honeycomb_still.png">
+        <img class = "project-image project-video fade-in" src="../Images/Material_Matters-Bee/bees_render.gif">
+        <img class = "project-image fade-in" src="../Images/Material_Matters-Bee/Honeycomb_still.png">
 
-      <div class="work-row" style="width:100%;padding-bottom:82.5%;margin-left:0%;">
-        <img class = "project-image fade-in lazy" style = "position: absolute;width:70%;left:30%;top:0%;"
-          data-src="../Images/Material_Matters-Bee/Honeycomb_closeup.gif">
-        <img class = "project-image fade-in lazy" style = "position: absolute;width:80%;left:0%;top:30%;"
-          data-src="../Images/Material_Matters-Bee/bees_cropped.gif">
+        <div class="work-row" style="width:100%;padding-bottom:82.5%;margin-left:0%;">
+          <img class = "project-image fade-in lazy" style = "position: absolute;width:70%;left:30%;top:0%;"
+            data-src="../Images/Material_Matters-Bee/Honeycomb_closeup.gif">
+          <img class = "project-image fade-in lazy" style = "position: absolute;width:80%;left:0%;top:30%;"
+            data-src="../Images/Material_Matters-Bee/bees_cropped.gif">
+        </div>
+
+        <p class = "annotation">An early animation of the honeycomb building and the
+          underlying bee system in the final animation which grows the honeycomb
+          through an infections style spreading.
+        </p>
+
+        <img class = "project-image project-video fade-in lazy" data-src="../Images/Material_Matters-Sea/Adaptive.gif">
+        <img class = "project-image fade-in lazy" data-src="../Images/Material_Matters-Sea/Adaptive_still.png">
+
+        <div class="work-row" style="width:100%;padding-bottom:82.5%;margin-left:0%;">
+          <img class = "project-image fade-in lazy" style = "position: absolute;width:70%;left:0%;top:0%;"
+            data-src="../Images/Material_Matters-Sea/Adaptive_test_02.gif">
+          <img class = "project-image fade-in lazy" style = "position: absolute;width:80%;left:30%;top:30%;"
+            data-src="../Images/Material_Matters-Sea/Adaptive_test_01.gif">
+        </div>
+
       </div>
-
-      <p class = "annotation">An early animation of the honeycomb building and the
-        underlying bee system in the final animation which grows the honeycomb
-        through an infections style spreading.
-      </p>
-
-      <img class = "project-image project-video fade-in lazy" data-src="../Images/Material_Matters-Sea/Adaptive.gif">
-      <img class = "project-image fade-in lazy" data-src="../Images/Material_Matters-Sea/Adaptive_still.png">
-
-      <div class="work-row" style="width:100%;padding-bottom:82.5%;margin-left:0%;">
-        <img class = "project-image fade-in lazy" style = "position: absolute;width:70%;left:0%;top:0%;"
-          data-src="../Images/Material_Matters-Sea/Adaptive_test_02.gif">
-        <img class = "project-image fade-in lazy" style = "position: absolute;width:80%;left:30%;top:30%;"
-          data-src="../Images/Material_Matters-Sea/Adaptive_test_01.gif">
-      </div>
-
     </div>
 
     <script src="../scripts/lazy-load.js"></script>
     <script src="../scripts/scroll-anim.js"></script>
+    <script src="../scripts/arrow-access.js"></script>
 
   </body>
 
   <footer>
-    <a class = "link" href="mailto:rosie.n.emery@gmail.com">rosie.n.emery@gmail.com</a>
+    <a href = "mailto:rosie.n.emery@gmail.com">
+      <img class = "email_icon" src = "../Images/email_icon_02.png">
+    </a>
   </footer>
 
 </html>

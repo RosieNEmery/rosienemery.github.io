@@ -19,7 +19,7 @@
     <link href="../site.css" rel="stylesheet" type="text/css">
   </head>
 
-  <body>
+  <body class = "no-scroll">
     <header>
       <div class ="row">
         <div class="left-nav">
@@ -34,18 +34,15 @@
       </div>
     </header>
 
-    <div class = "arrow" style = "float: right; margin-right: 5%;">
+    <div class = "arrow" style = " right: 5%;">
       <a href="./paint_tool_second.html">></a>
     </div>
-    <div class = "arrow" style = "float: left; margin-left: 5%">
+    <div class = "arrow" style = "left: 5%">
       <a href="./hope_grows.html"><</a>
     </div>
 
-    <div class = "wall">
+    <div id = 'page' class = "wall blurred-element">
       <h1 class = " about-title project-title">HUMANISING AUTONOMY</h1>
-
-
-
       <div class = "container">
 
         <div class = "project-info">
@@ -91,14 +88,18 @@
       <img class = "project-image fade-in" src="../Images/Humanising_Autonomy/Humanising_03.jpg">
 
     </div>
+  </div>
 
   <script src="../scripts/lazy-load.js"></script>
   <script src="../scripts/scroll-anim.js"></script>
+  <script src="../scripts/arrow-access.js"></script>
 
   </body>
 
   <footer>
-    <a class = "link" href="mailto:rosie.n.emery@gmail.com">rosie.n.emery@gmail.com</a>
+    <a href = "mailto:rosie.n.emery@gmail.com">
+      <img class = "email_icon" src = "../Images/email_icon_02.png">
+    </a>
   </footer>
 
 </html>

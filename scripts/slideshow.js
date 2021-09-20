@@ -72,9 +72,9 @@ function resumeSlides() {
 
 
 //For password protection
-function checkEnter(event, link) {
+function checkEnter(element, event, link) {
   if (event.which == 13 || event.key == "Enter") {
-    var password = document.getElementById("passInput").value;
+    var password = element.value;
     if(password == "showreel"){
       window.location.href = link;
 
@@ -89,7 +89,7 @@ function checkEnter(event, link) {
 }
 
 function checkKey(event, link, element) {
-  checkEnter(event, link);
+  checkEnter(element, event, link);
   if (event.which == 27 || event.key == "Escape"){
     removePasswordBox(element.parentNode);
   }

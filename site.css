@@ -98,6 +98,11 @@ footer {
   text-decoration: underline;
 }
 
+.no-scroll {
+  height: 100%;
+  overflow-y: hidden;
+}
+
 .link {
   text-decoration: underline;
 }
@@ -109,6 +114,7 @@ footer {
 }
 
 .arrow {
+  position: absolute;
   margin-top:50%;
   font-size: 5rem;
   opacity: 1;
@@ -116,6 +122,30 @@ footer {
 
 .arrow:hover{
   opacity: 0.5;
+}
+
+.email_icon {
+  float: left;
+  width: 4%;
+  margin-bottom: 2%;
+}
+
+
+.blurred-element{
+
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -ms-filter: blur(10px);
+  -o-filter: blur(10px);
+  filter: blur(10px);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+  pointer-events: none;
 }
 
 .fade-in {
@@ -385,6 +415,17 @@ footer {
   text-align: center;
   font-size: calc(6px + 4vw);
   letter-spacing: 2px;
+}
+
+.overlay-page{
+  position: absolute;
+
+  top: 5%;
+  left: 25%;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 90%;
 }
 
 .password{
