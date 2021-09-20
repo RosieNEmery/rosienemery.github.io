@@ -288,6 +288,7 @@ footer {
   margin-left: 0.5%;
   font-size: calc(12px + 1vw);
   border-color: black;
+  border-style: solid;
 }
 
 .dot {
@@ -441,6 +442,7 @@ footer {
   margin-left: 0.5%;
   font-size: calc(6px + 1.5vw);
   border-color: black;
+  border-style: solid;
 }
 
 .work-preview{
