@@ -92,5 +92,5 @@ function checkPostition(event){
 }
 
 document.addEventListener("scroll", checkScroll);
-document.addEventListener("mousemove", checkPostition);
+//document.addEventListener("mousemove", checkPostition);
 document.addEventListener("DOMContentLoaded", onLoad);

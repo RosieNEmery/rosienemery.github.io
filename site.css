@@ -1,5 +1,5 @@
 html {
-    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
+    font-family: 'Helvetica Neue', DM Sans, sans-serif;
     color: black;
     font-weight:120;
 
@@ -335,6 +335,11 @@ footer {
 
 .cv-item {
   text-align: left;
+}
+
+.cv-expand{
+  text-align: left;
+  text-decoration: underline;
 }
 
 /*reel page*/

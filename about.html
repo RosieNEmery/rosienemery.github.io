@@ -42,24 +42,78 @@
   <div class = "wall">
     <p>Rosie Emery is a digital 3D artist based in London.<br><br>
       Since completing her studies in <em>Computer Animation and Visualisation</em>
-      in 2017, she has since gone on to work as a technical artist/3D artist;
+      in 2017, she has gone on to work as a technical artist/3D artist;
       developing her skills in Houdini and learning webgl and TouchDesigner along the way.<br><br>
       Rosie is now currently working as a freelance technical artist/3D Artist.</p>
 
     <h3 class = "about-title" style="margin-top:70px">EXPERIENCE</h3>
 
     <div class = "cv">
+      <!-- Freelance section -->
       <div class = "cv-item">2020 - current</div>
-        <div class = "cv-item"> Freelance</div>
+      <div>
+        <div class = "cv-expand" onclick="handleDescrip(this)"
+        onmouseover="addLink()" onmouseout="removeLink()">
+          Freelance
+        </div>
+        <div style = "display: none;">
+          Working at studios such as The Mill, Marshmallow Laser Feast,
+          Future Deluxe and WeAreSeventeen
+        </div>
+      </div>
+
+      <!-- Field section -->
       <div class = "cv-item">2018-2020</div>
-        <div class = "cv-item"> Houdini TD at Field.io</div>
+      <div>
+        <div class = "cv-expand" onclick="handleDescrip(this)"
+        onmouseover="addLink()" onmouseout="removeLink()">
+          Field.io
+        </div>
+        <div style = "display: none;">
+          Working as a Houdini TA and generalist, occasionally taking on the
+          role of a 3D web developer or TouchDesigner developer
+        </div>
+      </div>
+
+      <!-- Pentagram section -->
       <div class = "cv-item">2018</div>
-        <div class = "cv-item"> 3D Intern at Pentagram</div>
+      <div>
+        <div class = "cv-expand" onclick="handleDescrip(this)"
+        onmouseover="addLink()" onmouseout="removeLink()">
+          3D Intern at Pentagram
+        </div>
+        <div style = "display: none;">
+          Working as a webgl and threejs developer with some 3D assistance on
+          other projects using Houdini
+        </div>
+      </div>
+
+      <!-- Labmeta section -->
       <div class = "cv-item">2017-2018</div>
-        <div class = "cv-item"> Junior Motion Designer at Labmeta</div>
+      <div>
+        <div class = "cv-expand" onclick="handleDescrip(this)"
+        onmouseover="addLink()" onmouseout="removeLink()">
+          Junior Motion Designer at Labmeta
+        </div>
+        <div style = "display: none;">
+          Working as a Houdini TA and generalist
+        </div>
+      </div>
+
+      <!-- Uni section -->
       <div class = "cv-item">2014-2017</div>
-        <div class = "cv-item"> BA in Computer Animation and Visualisation at
-          Bournemouth University</div>
+      <div>
+        <div class = "cv-expand" onclick="handleDescrip(this)"
+        onmouseover="addLink()" onmouseout="removeLink()">
+          BA in Computer Animation and Visualisation at Bournemouth University
+        </div>
+        <div style = "display: none;">
+          Studying as a 3D generalist (Houdini, Maya, Nuke, Photoshop, Premiere)
+          and 3D graphics developer (C++ with OpenGL, Python, Unix/Linux, Git).
+          Graduated with a 1st.
+        </div>
+      </div>
+
     </div>
 
     <h3 class = "about-title" style="margin-top:70px" >CONTACT</h3>
@@ -103,8 +157,8 @@
   }
   </script>
 
-  <script src = "https://threejs.org/build/three.js"></script>
-  <script src = "scripts/ripples.js"></script>
+  <script src = "scripts/CV.js"></script>
+  <!-- <script src = "scripts/ripples.js"></script> -->
 
   </body>
 
