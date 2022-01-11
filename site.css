@@ -120,8 +120,14 @@ footer {
   opacity: 1;
 }
 
+.arrow a{
+  padding: 25%;
+  margin: -25%;
+}
+
 .arrow:hover{
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .email_icon {
@@ -271,6 +277,16 @@ footer {
   transition: .25s ease;
 }
 
+.slideshow .arrow{
+  margin-top: 12.5%;
+  visibility: hidden;
+}
+
+.slideshow:hover .arrow {
+  visibility: visible;
+  transition: .25s ease;
+}
+
 .slideshow-password{
   position: relative;
   text-align: center;
@@ -340,6 +356,7 @@ footer {
 .cv-expand{
   text-align: left;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 /*reel page*/

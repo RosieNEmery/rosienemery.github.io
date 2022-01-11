@@ -14,11 +14,3 @@ function handleDescrip(element){
     title.style.fontWeight = "120";
   }
 }
-
-function addLink(){
-  document.body.style.cursor = 'pointer';
-}
-
-function removeLink(){
-  document.body.style.cursor = 'auto';
-}
