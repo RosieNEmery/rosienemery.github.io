@@ -118,6 +118,13 @@ footer {
   margin-top:50%;
   font-size: 5rem;
   opacity: 1;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .arrow a{
@@ -159,6 +166,15 @@ footer {
   user-select: none;
 
   pointer-events: none;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .fade-in {
@@ -285,7 +301,10 @@ footer {
 }
 
 .slideshow .arrow{
-  margin-top: 12.5%;
+  top: -100%;
+  padding: 2.5%;
+  padding-bottom: 25%;
+  padding-top: 25%;
   visibility: hidden;
 }
 
