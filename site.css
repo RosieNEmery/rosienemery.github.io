@@ -86,7 +86,6 @@ footer {
   margin-top: 1.5%;
   text-align: right;
   box-sizing: border-box;
-  width: 55%;
 }
 
 .menu a{
@@ -539,6 +538,32 @@ footer {
   margin-top: 15%;
 }
 
+.gallery {
+  display: grid;
+  gap: 10px;
+  width: calc(2*50% + 2*10px);
+  grid-template-columns: repeat(2,auto);
+
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.gallery_img{
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  position: relative;
+}
+
+.gallery_img:hover{
+  cursor: pointer;
+}
+
+.overlay-gallery{
+  opacity: 0.9;
+  background-color: #FFFFFF;
+}
 /*webgl testing*/
 
 #webgl-container {
