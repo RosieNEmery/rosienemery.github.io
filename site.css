@@ -564,6 +564,37 @@ footer {
   opacity: 0.9;
   background-color: #FFFFFF;
 }
+
+.accordion{
+  max-width: 100%;
+  height: 360px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  overflow: hidden;
+
+  margin-top: 15%;
+}
+
+.tab{
+  position: relative;
+  width: 20%;
+  height: inherit;
+  cursor: pointer;
+  transition: width .5s ease;
+}
+
+.tab img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  transition: all .5s ease;
+  border-radius: 20px;
+}
 /*webgl testing*/
 
 #webgl-container {

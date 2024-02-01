@@ -65,3 +65,19 @@ function removeSiblingBlur(element){
     }
     return;
 }
+
+function accord_enlarge(element){
+    element.style.width = "62.5%";
+    element.style.opacity = "100%";
+
+    // first child of the parent node
+    let sibling  = element.parentNode.firstChild;
+
+    while (sibling) {
+        if (sibling.nodeType === 1 && sibling !== element) {
+              sibling.style.width = "7.5%";
+              sibling.style.opacity = "75%";
+        }
+        sibling = sibling.nextSibling;
+    }
+}
