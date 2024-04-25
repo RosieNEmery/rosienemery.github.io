@@ -498,6 +498,12 @@ footer {
 
 /*webgl testing*/
 
+canvas {
+  display: block;
+
+}
+
+
 #webgl-container {
   display: flex;
   flex-direction: row;

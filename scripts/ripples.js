@@ -1,153 +1,120 @@
-/*const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+window.addEventListener("load", setupWebGL, false);
+let gl;
+let program;
 
-//const container = document.getElementById( 'canvas-container' );
-const drawing_canvas = document.getElementById( 'drawing-surface' );
+function setupWebGL(evt) {
+  window.removeEventListener(evt.type, setupWebGL, false);
+  if (!(gl = getRenderingContext())) return;
 
-renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true, canvas: drawing_canvas } );
-renderer.setSize( window.innerWidth, window.innerHeight );
-//document.body.appendChild( renderer.domElement );
+  let source = document.querySelector("#vertex-shader").innerHTML;
+  const vertexShader = gl.createShader(gl.VERTEX_SHADER);
+  gl.shaderSource(vertexShader, source);
+  gl.compileShader(vertexShader);
 
+  source = document.querySelector("#fragment-shader").innerHTML;
+  const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+  gl.shaderSource(fragmentShader, source);
+  gl.compileShader(fragmentShader);
 
-const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-const material = new THREE.MeshNormalMaterial();
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
-
-camera.position.z = 1;
-
-const animate = function () {
-
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-};
-
-var render = function() {
-  animate();
-  requestAnimationFrame(render);
-  renderer.render(scene, camera);
-};
-
-render();
-
-window.addEventListener( 'resize', onWindowResize, false );
-
-function onWindowResize(){
-
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize( window.innerWidth, window.innerHeight );
-}*/
-
-
-function createShader(gl, type, source) {
-  var shader = gl.createShader(type);
-  gl.shaderSource(shader, source);
-  gl.compileShader(shader);
-  var success = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
-  if (success) {
-    return shader;
-  }
-
-  console.log(gl.getShaderInfoLog(shader));
-  gl.deleteShader(shader);
-}
-
-function createProgram(gl, vertexShader, fragmentShader) {
-  var program = gl.createProgram();
+  program = gl.createProgram();
   gl.attachShader(program, vertexShader);
   gl.attachShader(program, fragmentShader);
   gl.linkProgram(program);
-  var success = gl.getProgramParameter(program, gl.LINK_STATUS);
-  if (success) {
-    return program;
+  gl.detachShader(program, vertexShader);
+  gl.detachShader(program, fragmentShader);
+  gl.deleteShader(vertexShader);
+  gl.deleteShader(fragmentShader);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    const linkErrLog = gl.getProgramInfoLog(program);
+    cleanup();
+    return;
   }
 
-  console.log(gl.getProgramInfoLog(program));
-  gl.deleteProgram(program);
+  initializeAttributes();
+
+  gl.useProgram(program);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+  cleanup();
 }
 
-function init(){
-  this.canvas = document.getElementById( 'drawing-surface' );
+let buffer;
+function initializeAttributes() {
+//vertices
+  var vertices = [
+    0.5, -0.5,
+    0.5, 0.5,
+    -0.5, -0.5,
+    -0.5, 0.5
+  ];
 
-  gl = this.canvas.getContext("webgl");
-    if (!gl) {
-      return;
-    }
+  var vertex_buffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
 
-  var vertexShaderSource = document.querySelector("#vertex-shader-3d").text;
-  var fragmentShaderSource = document.querySelector("#fragment-shader-3d").text;
+  var coord = gl.getAttribLocation(program, "aPosition");
+  gl.vertexAttribPointer(coord, 2, gl.FLOAT, false, 0, 0);
+  gl.enableVertexAttribArray(coord);
 
-  var vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-  var fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+//uvs
+  var uvs = [
+     1, 0,
+     1, 1,
+     0, 0,
+     0, 1
+  ];
 
-  this.program = createProgram(gl, vertexShader, fragmentShader);
+  var uv_buffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, uv_buffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(uvs), gl.STATIC_DRAW);
 
-  var posAttribLocation = gl.getAttribLocation(this.program, "a_position");
+  var uv_coord = gl.getAttribLocation(program, "uv");
+  gl.vertexAttribPointer(uv_coord, 2, gl.FLOAT, false, 0, 0);
+  gl.enableVertexAttribArray(uv_coord);
 
-  var resLocation = gl.getUniformLocation(program, "u_res");
-  gl.uniform2f(resLocation, gl.canvas.width, gl.canvas.height);
-  var transLocation = gl.getUniformLocation(program, "u_trans");
-  gl.uniform2f(transLocation, [0 , 0]);
+//add texture
+  const img = new Image();
+  img.onload = function () {
+    gl.activeTexture(gl.TEXTURE0);
+    var tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, img);
+    gl.generateMipmap(gl.TEXTURE_2D);
 
-  var posBuffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+    const texLoc = gl.getUniformLocation(program, "texture");
+    gl.uniform1i(texLoc, 0);
 
-  var pos = [
-  0, 0,
-  0, 0.5,
-  0.7, 0,];
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(pos), gl.DYNAMIC_DRAW);
+    // draw over the entire viewport
+};
+img.src = "../Images/About.png";
 
-  // Tell WebGL how to convert from clip space to pixels
-  gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+}
 
-  gl.clearColor(0, 0, 0, 0);
+function cleanup() {
+  gl.useProgram(null);
+  if (buffer) {
+    gl.deleteBuffer(buffer);
+  }
+  if (program) {
+    gl.deleteProgram(program);
+  }
+}
+
+function getRenderingContext() {
+  var canvas = document.querySelector("canvas");
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+  var gl = canvas.getContext("webgl")
+    || canvas.getContext("experimental-webgl");
+  if (!gl) {
+    var paragraph = document.querySelector("p");
+    paragraph.innerHTML = "Failed to get WebGL context."
+      + "Your browser or device may not support WebGL.";
+    return null;
+  }
+  gl.viewport(0, 0,
+    gl.drawingBufferWidth, gl.drawingBufferHeight);
+  gl.clearColor(0.0, 0.0, 0.0, 1.0);
   gl.clear(gl.COLOR_BUFFER_BIT);
-
-  gl.useProgram(this.program);
-
-
-  gl.enableVertexAttribArray(posAttribLocation);
-
-  gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
-
-  // Tell the attribute how to get data out of positionBuffer (ARRAY_BUFFER)
-  var size = 2;          // 2 components per iteration
-  var type = gl.FLOAT;   // the data is 32bit floats
-  var normalize = false; // don't normalize the data
-  var stride = 0;        // 0 = move forward size * sizeof(type) each iteration to get the next position
-  var offset = 0;        // start at the beginning of the buffer
-  gl.vertexAttribPointer(
-      posAttribLocation, size, type, normalize, stride, offset);
-
-  // draw
-  var primitiveType = gl.TRIANGLES;
-  var offset = 0;
-  var count = 3;
-  gl.drawArrays(primitiveType, offset, count);
-  window.addEventListener( "mousedown", click, true );
+  return gl;
 }
-
-function click(event){
-  console.log(event);
-
-  gl = this.canvas.getContext("webgl");
-
-  gl.clearColor(0, 0, 0, 0);
-  gl.clear(gl.COLOR_BUFFER_BIT);
-
-  console.log(this.canvas.getContext("webgl"));
-
-  var transLocation = gl.getUniformLocation(this.program, "u_trans");
-  var trans = [event.x, event.y];
-  gl.uniform2fv(transLocation, trans);
-
-  var primitiveType = gl.TRIANGLES;
-  var offset = 0;
-  var count = 3;
-  gl.drawArrays(primitiveType, offset, count);
-}
-
-init();

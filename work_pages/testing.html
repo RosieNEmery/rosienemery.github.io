@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+      name="viewport">
+
+    <meta name="description" content="Freelance Houdini artist.">
+
+    <title>About - Rosie Emery</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link href="../site.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body><header>
+    <div class ="row">
+      <div class="left-nav">
+        <a href="../index">Rosie Emery</a>
+      </div>
+
+      <ul class = "menu">
+        <li><a href="../work">Work</a></li>
+        <li><a href="../play">Play</a></li>
+        <li><a href="../reel">Reel</a></li>
+        <li><a href="../about">About</a></li>
+        <li><a href = "https://www.instagram.com/re.anksha/" target="_blank" rel="noopener noreferrer">
+              <img class = "insta_icon" src = "../Images/insta_icon.png">
+            </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!--<img class="fade-in about-image" src="../Images/About.png">-->
+
+  <!--<div id = "canvas-container">-->
+  <canvas id="glcanvas" width="600" height="460">
+    Your browser does not support canvas
+  </canvas>
+  <!--</div>-->
+
+  </body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript" src="../scripts/ripples.js"> </script>
+
+<script type="x-shader/x-vertex" id="vertex-shader">
+  precision highp float;
+
+  attribute vec2 aPosition;
+  attribute vec2 uv;
+
+  varying vec2 vUv;
+
+  void main() {
+    vUv = uv;
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+  }
+</script>
+
+<script type="x-shader/x-fragment" id="fragment-shader">
+  precision highp float;
+
+  varying vec2 vUv;
+
+  void main() {
+    gl_FragColor = vec4(vUv, 0.0, 1.0);
+  }
+</script>
+
+  <!-- vertex shader -->
+<script  id="vertex-shader-3d" type="x-shader/x-vertex">
+  precision highp float;
+  attribute vec2 aPosition;
+  varying vec2 vUv;
+
+  void main() {
+    vUv = uv;
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+  }
+</script>
+  <!-- fragment shader -->
+<script  id="fragment-shader-3d" type="x-shader/x-fragment">
+  precision highp float;
+
+  uniform sampler2D texture;
+  varying vec2 vUv;
+
+void main() {
+   gl_FragColor = vec4(0.18, 0.54, 0.34, 1.0);//= texture2D(texture, vUv);
+}
+</script>
