@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
-    <link href="../site.css" rel="stylesheet" type="text/css">
+    <link href="site.css" rel="stylesheet" type="text/css">
   </head>
 
   <body><header>
@@ -31,7 +31,7 @@
         <li><a href="../reel">Reel</a></li>
         <li><a href="../about">About</a></li>
         <li><a href = "https://www.instagram.com/re.anksha/" target="_blank" rel="noopener noreferrer">
-              <img class = "insta_icon" src = "../Images/insta_icon.png">
+              <img class = "insta_icon" src = "./Images/insta_icon.png">
             </a>
         </li>
       </ul>
@@ -54,51 +54,32 @@
 
 
 
-<script type="text/javascript" src="../scripts/ripples.js"> </script>
+<script type="text/javascript" src="scripts/ripples.js"> </script>
 
-<script type="x-shader/x-vertex" id="vertex-shader">
+<!-- vertex shader -->
+<script  id="vertex-shader-2d" type="x-shader/x-vertex">
   precision highp float;
 
-  attribute vec2 aPosition;
-  attribute vec2 uv;
+  attribute vec2 a_pos;
+  attribute vec2 a_texCoord;
 
   varying vec2 vUv;
 
   void main() {
-    vUv = uv;
-    gl_Position = vec4(aPosition, 0.0, 1.0);
+     vUv = a_texCoord;
+
+     gl_Position = vec4(a_pos, 0, 1);
   }
 </script>
 
-<script type="x-shader/x-fragment" id="fragment-shader">
+<!-- fragment shader -->
+<script  id="fragment-shader-2d" type="x-shader/x-fragment">
   precision highp float;
 
+  uniform sampler2D u_tex;
   varying vec2 vUv;
 
   void main() {
-    gl_FragColor = vec4(vUv, 0.0, 1.0);
+     gl_FragColor = texture2D(u_tex, vUv);
   }
-</script>
-
-  <!-- vertex shader -->
-<script  id="vertex-shader-3d" type="x-shader/x-vertex">
-  precision highp float;
-  attribute vec2 aPosition;
-  varying vec2 vUv;
-
-  void main() {
-    vUv = uv;
-    gl_Position = vec4(aPosition, 0.0, 1.0);
-  }
-</script>
-  <!-- fragment shader -->
-<script  id="fragment-shader-3d" type="x-shader/x-fragment">
-  precision highp float;
-
-  uniform sampler2D texture;
-  varying vec2 vUv;
-
-void main() {
-   gl_FragColor = vec4(0.18, 0.54, 0.34, 1.0);//= texture2D(texture, vUv);
-}
 </script>
