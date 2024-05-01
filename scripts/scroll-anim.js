@@ -34,6 +34,7 @@ function checkScroll(){
   }
 }
 
+//not using but keeping as reference for tracked arrows
 function checkPostition(event){
   var mousePos = {x: event.pageX, y: event.pageY};
   var width = window.innerWidth;

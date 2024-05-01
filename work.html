@@ -23,100 +23,133 @@
     <header>
       <div class ="row">
         <div class="left-nav">
-          <a href="./index.html">Rosie Emery</a>
+          <a href="./index">Rosie Emery</a>
         </div>
 
         <ul class = "menu">
-          <li><a href="./work.html">Work</a></li>
-          <li><a href="./reel.html">Reel</a></li>
-          <li><a href="./about.html">About</a></li>
+          <li><a href="./work">Work</a></li>
+          <li><a href="./play">Play</a></li>
+          <li><a href="./reel">Reel</a></li>
+          <li><a href="./about">About</a></li>
+          <li><a href = "https://www.instagram.com/re.anksha/" target="_blank" rel="noopener noreferrer">
+                <img class = "insta_icon" src = "./Images/insta_icon.png">
+              </a>
+          </li>
         </ul>
       </div>
     </header>
 
     <div class="container" style= "margin-top:10%;">
 
-      <div class = "grid-image" style = "width:60%; left: 25%;">
-        <img class = "work-preview fade-in" src = "./Images/Hope_Grows/hope_grows_icon.png">
-        <a class = "overlay" href="./work_pages/hope_grows.html">
-            <div class = "overlay-text">HOPE GROWS</div>
-        </a>
-      </div>
-
-      <div class = "grid-image" style = " width:75.85%; margin-top: 12.5%;" onclick="getAccess('./work_pages/humanising.html')">
-        <img class = "work-preview fade-in" src = "./Images/Humanising_icon.jpg">
+      <div class = "grid-image" style = " width:75.85%;" onclick="getAccess('./work_pages/humanising.html')">
+        <img class = "work-preview fade-in" src = "./Images/Work_icons/Humanising_icon.jpg">
         <div class = "overlay">
             <div class = "overlay-text" style= "top: 42.5%;">HUMANISING AUTONOMY</div>
             <div class = "overlay-text password" style= "top: 42.5%;">PASSWORD:
               <input type="text" class = "small-password-box" value=""id="passInput"
-                onkeydown="checkEnter(this, event,'./work_pages/humanising.html')">
+                onkeydown="checkEnter(this, event,'./work_pages/humanising')">
             </div>
         </div>
       </div>
 
-      <div class = "grid-image" style = "left: 49.9%; margin-top: 15%;">
-        <img class = "work-preview fade-in" src = "./Images/Painting_2.0_icon.png">
-        <a class = "overlay" href="./work_pages/paint_tool_second.html">
-            <div class = "overlay-text">PAINT TOOL :: 2.0</div>
+      <div class = "grid-image" style = "width:60%; margin-top: 10%; left: 50%;">
+        <img class = "work-preview fade-in" src = "./Images/Hope_Grows/hope_grows_icon.png">
+        <a class = "overlay" href="./work_pages/hope_grows">
+            <div class = "overlay-text">HOPE GROWS</div>
         </a>
       </div>
 
-      <div class = "grid-image" style = "left: -0.75%; margin-top: 10.25%;">
-        <img class = "work-preview fade-in" src = "./Images/Zoo_icon.png">
-        <a class = "overlay" href="./work_pages/zooaszoo.html">
-            <div class = "overlay-text">ZOOASZOO.COM</div>
+      <div class = "grid-image" style = "width:75%; margin-top: 7.5%; left: 9%;">
+        <img class = "work-preview fade-in" src = "./Images/Work_icons/Marici_icon.png">
+        <a class = "overlay" href="./work_pages/marici">
+            <div class = "overlay-text">MARICI</div>
         </a>
       </div>
 
-      <div class = "grid-image" style = " left: 24.625%; margin-top: 13.75%;  width:63.25%">
-        <img class = "work-preview-portrait fade-in" src = "./Images/IBM_icon_crop.png">
-        <a class = "overlay" href="./work_pages/IBM_2020.html">
+      <div class = "grid-image" style = "width:70%; margin-top: 10%; left: 30%;">
+        <img class = "work-preview fade-in" src = "./Images/Work_icons/being_waves_still_05.png">
+        <a class = "overlay" href="./work_pages/being_waves">
+            <div class = "overlay-text">BEING WAVES</div>
+        </a>
+      </div>
+
+      <div class = "grid-image" style = "width: 40%; left: 9%; margin-top: 10%;" onclick="getAccess('./work_pages/bibi.html')">
+        <img loading = "lazy" class = "work-preview fade-in" src = "./Images/Work_icons/Bibi_icon.png">
+        <div class = "overlay">
+            <div class = "overlay-text" style= "top: 42.5%;">WEAR THE WEEKEND</div>
+            <div class = "overlay-text password" style= "top: 42.5%;">PASSWORD:
+              <input type="text" class = "small-password-box" value=""id="passInput"
+                onkeydown="checkEnter(this, event,'./work_pages/bibi')">
+            </div>
+        </div>
+      </div>
+
+
+      <div class = "grid-image" style = "left: 51%; margin-top: -20%; width: 50.5%">
+        <img loading = "lazy" class = "work-preview fade-in" src = "./Images/Work_icons/IoDF_icon.png">
+        <a class = "overlay" href="./work_pages/IoDF">
+            <div class = "overlay-text">IoDFxH&M</div>
+        </a>
+      </div>
+
+      <div class = "grid-image" style = " left: 25%; margin-top: 5%;  width:63.25%">
+        <img loading = "lazy" class = "work-preview-portrait fade-in" src = "./Images/Work_icons/IBM_icon_crop.png">
+        <a class = "overlay" href="./work_pages/IBM_2020">
             <div class = "overlay-text">IBM 2020</div>
         </a>
       </div>
 
-      <div class = "grid-image" style = "left: 37.25%; margin-top: 14.75%; width:75.75%"
-        onclick="getAccess('./work_pages/material_matters.html')">
-        <img class = "work-preview fade-in lazy" data-src = "./Images/Material_Sea_icon.png">
-        <div class = "overlay">
-            <div class = "overlay-text" style= "top: 42.5%;">MATERIAL MATTERS</div>
-            <div class = "overlay-text password" style= "top: 42.5%;">PASSWORD:
-              <input type="text" class = "small-password-box" value=""id="passInput"
-                onkeydown="checkEnter(this, event,'./work_pages/material_matters.html')">
-            </div>
-        </div>
+      <div class = "grid-image" style = "left: -0.75%; margin-top: 5%;">
+        <img loading = "lazy" class = "work-preview fade-in" src = "./Images/Work_icons/Zoo_icon.png">
+        <a class = "overlay" href="./work_pages/zooaszoo">
+            <div class = "overlay-text">ZOOASZOO.COM</div>
+        </a>
       </div>
 
-      <div class = "grid-image" style = "margin-top: 16%; left: -0.7%">
-        <img class = "work-preview fade-in lazy" data-src = "./Images/Painting_icon.png">
+      <div class = "grid-image" style = "left: 50%; margin-top: 7%; width:60%">
+        <img loading = "lazy" class = "work-preview fade-in" src = "./Images/Work_icons/Nebelivka_icon_02.jpg">
+        <a class = "overlay" href="./work_pages/nebelivka_hypothesis">
+            <div class = "overlay-text">THE NEBELIVKA HYPOTHESIS</div>
+        </a>
+      </div>
+
+      <div class = "grid-image" style = "left: 20%; margin-top: 7%; width:75.75%">
+        <img loading = "lazy" class = "work-preview fade-in" src = "./Images/Work_icons/Material_Sea_icon.png">
+        <a class = "overlay" href="./work_pages/material_matters.html">
+            <div class = "overlay-text">REGENERATIVE BY DESIGN</div>
+        </a>
+      </div>
+
+      <div class = "grid-image" style = "left: 55.5%; margin-top: 10%; width:55%">
+        <img loading = "lazy" class = "work-preview fade-in" src = "./Images/Work_icons/Painting_icon.png">
         <a class = "overlay" href="./work_pages/paint_tool.html">
             <div class = "overlay-text">PAINT TOOL :: 1.0</div>
         </a>
       </div>
 
-      <div class = "grid-image" style = "margin-top: 14.25%; left: 24.6%;">
-        <img class = "work-preview fade-in lazy" data-src = "./Images/Envision_icon_crop.png">
+      <div class = "grid-image" style = "margin-top: -10%; left: 4%;width:55%">
+        <img loading = "lazy" class = "work-preview fade-in" src = "./Images/Work_icons/Painting_2.0_icon.png">
+        <a class = "overlay" href="./work_pages/paint_tool_second.html">
+            <div class = "overlay-text">PAINT TOOL :: 2.0</div>
+        </a>
+      </div>
+
+      <div class = "grid-image" style = "margin-top: 10%; left: 24.6%;">
+        <img loading = "lazy" class = "work-preview fade-in" src = "./Images/Work_icons/Envision_icon_crop.png">
         <a class = "overlay" href="./work_pages/envision.html">
             <div class = "overlay-text">ENVISION</div>
         </a>
       </div>
 
-      <div class = "grid-image" style = "margin-top: 17.5%; width:47.5%; left: 32.6%;">
-        <img class = "work-preview fade-in lazy" data-src = "./Images/Experiments_icon.png">
-        <a class = "overlay" href="./work_pages/experiments.html">
-            <div class = "overlay-text">EXPERIMENTS</div>
-        </a>
-      </div>
     </div>
 
     <script src="scripts/work.js"></script>
-    <script src="scripts/lazy-load.js"></script>
 
   </body>
 
   <footer>
     <a href = "mailto:rosie.n.emery@gmail.com">
-      <img class = "email_icon" src = "./Images/email_icon_02.png">
+      <img class = "email_icon" src = "./Images/email_icon.png">
     </a>
   </footer>
 

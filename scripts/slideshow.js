@@ -26,8 +26,8 @@ function startSlide(){
   dots[slideIndex-1].className += " dot-active";
 
   start_timer=setTimeout(function(){
-    endSlide(2000);
-  },2000);
+    endSlide(length);
+  },length);
 }
 
 document.addEventListener("DOMContentLoaded", startSlide());
@@ -45,6 +45,7 @@ function endSlide(duration) {
 }
 
 function currentSlide(n) {
+  //endSlide(length);
   clearTimeout(start_timer);
   clearTimeout(end_timer);
   slideIndex = n;
@@ -66,7 +67,7 @@ function resumeSlides() {
   var slides = document.getElementsByClassName("slideshow");
   slides[slideIndex-1].classList.remove('no-anim');
 
-  endSlide(2000);
+  endSlide(length);
 }
 
 

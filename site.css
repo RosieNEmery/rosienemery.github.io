@@ -1,5 +1,5 @@
 html {
-    font-family: 'Helvetica Neue', DM Sans, sans-serif;
+    font-family: 'Helvetica Neue', 'Open Sans', sans-serif;
     color: black;
     font-weight:120;
 
@@ -8,6 +8,10 @@ html {
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -o-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 100%;
 }
 
 div {
@@ -86,7 +90,6 @@ footer {
   margin-top: 1.5%;
   text-align: right;
   box-sizing: border-box;
-  width: 55%;
 }
 
 .menu a{
@@ -118,16 +121,33 @@ footer {
   margin-top:50%;
   font-size: 5rem;
   opacity: 1;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.arrow a{
+  padding: 25%;
+  margin: -25%;
 }
 
 .arrow:hover{
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .email_icon {
   float: left;
   width: 30px;
   margin-bottom: 2%;
+}
+
+.insta_icon {
+  width: 22px;
 }
 
 
@@ -146,6 +166,15 @@ footer {
   user-select: none;
 
   pointer-events: none;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .fade-in {
@@ -271,6 +300,19 @@ footer {
   transition: .25s ease;
 }
 
+.slideshow .arrow{
+  top: -100%;
+  padding: 2.5%;
+  padding-bottom: 25%;
+  padding-top: 25%;
+  visibility: hidden;
+}
+
+.slideshow:hover .arrow {
+  visibility: visible;
+  transition: .25s ease;
+}
+
 .slideshow-password{
   position: relative;
   text-align: center;
@@ -318,6 +360,7 @@ footer {
   margin-top: 10%;
   width: 285px;
   height: auto;
+  border-radius: 100px;
 }
 
 .about-title {
@@ -340,6 +383,7 @@ footer {
 .cv-expand{
   text-align: left;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 /*reel page*/
@@ -496,6 +540,63 @@ footer {
   margin-top: 15%;
 }
 
+.gallery {
+  display: grid;
+  gap: 10px;
+  width: calc(2*50% + 2*10px);
+  grid-template-columns: repeat(2,auto);
+
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.gallery_img{
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  position: relative;
+}
+
+.gallery_img:hover{
+  cursor: pointer;
+}
+
+.overlay-gallery{
+  opacity: 0.9;
+  background-color: #FFFFFF;
+}
+
+.accordion{
+  max-width: 100%;
+  height: 360px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  overflow: hidden;
+
+  margin-top: 15%;
+}
+
+.tab{
+  position: relative;
+  width: 20%;
+  height: inherit;
+  cursor: pointer;
+  transition: width .5s ease;
+}
+
+.tab img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  transition: all .5s ease;
+  border-radius: 20px;
+}
 /*webgl testing*/
 
 canvas {
