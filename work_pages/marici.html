@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+      name="viewport">
+
+    <meta name="description" content="Freelance Houdini artist.">
+
+    <title>Marici - Rosie Emery</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <link href="../site.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <header>
+      <div class ="row">
+        <div class="left-nav">
+          <a href="../index">Rosie Emery</a>
+        </div>
+
+        <ul class = "menu">
+          <li><a href="../work">Work</a></li>
+          <li><a href="../play">Play</a></li>
+          <li><a href="../reel">Reel</a></li>
+          <li><a href="../about">About</a></li>
+          <li><a href = "https://www.instagram.com/re.anksha/" target="_blank" rel="noopener noreferrer">
+                <img class = "insta_icon" src = "../Images/insta_icon.png">
+              </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class = "arrow" style = "right: 5%;">
+      <a href = "./being_waves">></a>
+    </div>
+    <div class = "arrow" style = "left: 5%">
+      <a href="./hope_grows"><</a>
+    </div>
+
+    <div class = "wall">
+      <h1 class = " about-title project-title">MARICI</h1>
+
+      <div class = "container">
+
+        <div class = "project-info">
+            <div class = "project-info-item">Personal Project</div><div class = "project-info-item"> </div>
+            <div class = "project-info-item">Date : 2023</div>
+            <div class = "project-info-item">Marici is a fully digital headpiece,
+              tracked and composited onto live action footage. The project centres
+              around a headpiece influenced by my interest in fashion and cultural
+              heritage.
+              <br><br>
+              I was responsible for the headpiece design and all CGI elements,
+              comp, cut and sound. The project was completed using Houdini,
+              Blender, Nuke and Resolve with rendering done in Redshift.
+            </div>
+        </div>
+
+        <video class = "project-video" controls>
+          <source src="../Images/Headpiece/Headpiece_edit.mp4" type="video/mp4">
+        </video>
+
+        <img class = "project-image fade-in" style = "width:70%; margin-left:15%"
+          src="../Images/Headpiece/Headpiece_design_still.png">
+        <p class = "annotation">Render of the final design; the design is
+          inspired by south asian bridal headpieces and the S/S21 Iris Van Herpen
+          collection.</p>
+
+        <div class="work-row" style= "width:100%;padding-bottom:122%;margin-left:0%;">
+          <img loading = "lazy" class = "project-image fade-in" style = "position: absolute;width:50%;left:0%;top:42%;"
+            src="../Images/Headpiece/chain_anim.gif">
+          <img loading = "lazy" class = "project-image fade-in" style = "position: absolute;width:50%;left:45%;top:15%;"
+            src="../Images/Headpiece/head_model_360.gif">
+          <img loading = "lazy" class = "project-image fade-in" style = "position: absolute;width:45%;left:7.5%;top:0%;"
+            src="../Images/Headpiece/env_360.gif">
+          <img loading = "lazy" class = "project-image fade-in" style = "position: absolute;width:45%;left:60%;top:53%;"
+            src="../Images/Headpiece/arm_anim.gif">
+        </div>
+        <p class = "annotation">(Above) 3D scans taken of the environment and head
+          model to help with intergration. (Bottom right) Vellum simulation of
+          the chains, using packed spheres for collisions. (Bottom left) Animation
+          of a single armature which was then instanced and offset for the final
+          design. </p>
+
+        <div class="work-row" style= "width:100%;padding-bottom:110%;margin-left:0%;">
+          <img loading = "lazy" class = "project-image fade-in" style = "position: absolute;width:100%;left:0%;top:54%;"
+            src="../Images/Headpiece/chrome_ball_exposures_01.jpg">
+          <img loading = "lazy" class = "project-image fade-in" style = "position: absolute;width:100%;left:0%;top:0%;"
+            src="../Images/Headpiece/chrome_ball_exposures_02.jpg">
+          <img loading = "lazy" class = "project-image fade-in" style = "position: absolute;width:70%;left:15%;top:25%;"
+            src="../Images/Headpiece/env_hdri.jpg">
+        </div>
+        <p class = "annotation">Rough HDRI created from chrome ball image
+          exposures.</p>
+
+        <div class="accordion fade-in">
+          <div class="tab" onmouseover="accord_enlarge(this)" style= "width: 62.5%;">
+            <img loading = "lazy" src="../Images/Headpiece/SH030_footage_F1.jpg">
+          </div>
+          <div class="tab" onmouseover="accord_enlarge(this)" style= "width: 7.5%;">
+            <img loading = "lazy" src="../Images/Headpiece/SH030_track_F1.jpg">
+          </div>
+          <div class="tab" onmouseover="accord_enlarge(this)" style= "width: 7.5%;">
+            <img loading = "lazy" src="../Images/Headpiece/SH030_viewport_F1.jpg">
+          </div>
+          <div class="tab" onmouseover="accord_enlarge(this)" style= "width: 7.5%;">
+            <img loading = "lazy" src="../Images/Headpiece/SH030_shadow_F1.jpg">
+          </div>
+          <div class="tab" onmouseover="accord_enlarge(this)" style= "width: 7.5%;">
+            <img loading = "lazy" src="../Images/Headpiece/SH030_render_F1.jpg">
+          </div>
+          <div class="tab" onmouseover="accord_enlarge(this)" style= "width: 7.5%;">
+            <img loading = "lazy" src="../Images/Headpiece/SH030_comp_F1.jpg">
+          </div>
+        </div>
+        <p class = "annotation">(1)Raw footage (2)Tracking in Blender (3)Tracked
+          head animation and headpiece (4)Shadow pass comp (5)Final headpiece
+          render (6) Final comp + colour in Nuke</p>
+
+        <video class = "project-video" controls>
+          <source src="../Images/Headpiece/process_reel_v03.mp4" type="video/mp4">
+        </video>
+        <p class = "annotation">Project breakdown reel, music used is Isobel
+          by Björk.
+          <br><br>
+          Throughout this project I got to practice and implement
+          techniques for live action integration. I learnt a lot from the process
+          and consequently have a better understanding of what is needed from a
+          live action shoot to produce the best output.</p>
+
+
+      </div>
+    </div>
+
+    <script src="../scripts/scroll-anim.js"></script>
+    <script src="../scripts/enlarge_image.js"></script>
+
+  </body>
+
+  <footer>
+    <a href = "mailto:rosie.n.emery@gmail.com">
+      <img class = "email_icon" src = "../Images/email_icon.png">
+    </a>
+  </footer>
+
+</html>
