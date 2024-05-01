@@ -32,11 +32,6 @@
       </ul>
     </div>
   </header>
-  <!--<div id = "canvas-container">-->
-  <canvas id="glcanvas" width="600" height="460">
-    Oh no! Your browser doesn't support canvas!
-  </canvas>
-  <!--</div>-->
 
   <img class="fade-in about-image" src="./Images/About.png">
 
@@ -121,42 +116,6 @@
     <a class = "col-3 link" href="mailto:rosie.n.emery@gmail.com">rosie.n.emery@gmail.com</a>
     <div style = "margin-bottom: 10%"></div>
   </div>
-
-    <!-- vertex shader -->
-  <script  id="vertex-shader-3d" type="x-shader/x-vertex">
-  attribute vec4 a_position;
-
-  uniform vec2 u_res;
-  uniform vec2 u_trans;
-
-  varying vec4 v_color;
-
-  void main() {
-    vec2 position = a_position + u_trans;
-
-    // convert the position from pixels to 0.0 to 1.0
-    vec2 zeroToOne = position / u_res;
-
-    // convert from 0->1 to 0->2
-    vec2 zeroToTwo = zeroToOne * 2.0;
-
-    // convert from 0->2 to -1->+1 (clipspace)
-    vec2 clipSpace = zeroToTwo - 1.0;
-
-    gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
-    v_color = vec4(1.0, 0.0, 0.0, 1.0);
-  }
-  </script>
-  <!-- fragment shader -->
-  <script  id="fragment-shader-3d" type="x-shader/x-fragment">
-  precision mediump float;
-
-  varying vec4 v_color;
-
-  void main() {
-     gl_FragColor = v_color;
-  }
-  </script>
 
   <script src = "scripts/CV.js"></script>
   <!-- <script src = "scripts/ripples.js"></script> -->
