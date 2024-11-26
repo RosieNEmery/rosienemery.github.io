@@ -7,25 +7,25 @@ function setupWebGL(evt) {
   window.removeEventListener(evt.type, setupWebGL, false);
   if (!(gl = getRenderingContext())) return;
 
-  bubble_program = initShaders(gl, "#vertex-shader-bubble", "#fragment-shader-bubble");
-  initializeAttributes(gl, bubble_program, 0.5);
-
-  magnifying_glass_program = initShaders(gl, "#vertex-shader-tex", "#fragment-shader-tex");
-  initializeAttributes(gl, magnifying_glass_program, 1.0);
-
-  loadTexture(gl, bubble_program,
+  bubble_program = initShaders("#vertex-shader-bubble", "#fragment-shader-bubble");
+  initializeAttributes(bubble_program, 1.0);
+  loadTexture(bubble_program,
   "https://raw.githubusercontent.com/RosieNEmery/rosienemery.github.io/master/Images/About.png");
-  loadTexture(gl, magnifying_glass_program,
-  "https://raw.githubusercontent.com/RosieNEmery/rosienemery.github.io/master/Images/About.png");
+
+  magnifying_glass_program = initShaders("#vertex-shader-tex", "#fragment-shader-tex");
+  initializeAttributes(magnifying_glass_program, 0.5);
+  loadTexture(magnifying_glass_program,
+  "https://raw.githubusercontent.com/RosieNEmery/rosienemery.github.io/Testing/Images/magnifying_glass_04.png");
+
   gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
 
   //mouse events
   window.addEventListener("mousemove", handleMouseMove, false);
 
-  render(gl, bubble_program, );
+  render();
 }
 
-function initializeAttributes(gl, program, quad_size) {
+function initializeAttributes(program, quad_size) {
 
   var posLocation = gl.getAttribLocation(program, "a_pos");
   var texcoordLocation = gl.getAttribLocation(program, "a_texCoord");
@@ -33,10 +33,10 @@ function initializeAttributes(gl, program, quad_size) {
   let centre = [0,0];
 
   var vertices = [
-    1 + centre[0], -1 + centre[1],
-    1 + centre[0], 1 + centre[1],
-    -1 + centre[0], -1 + centre[1],
-    -1 + centre[0], 1 + centre[1]
+    quad_size + centre[0], -quad_size + centre[1],
+    quad_size + centre[0], quad_size + centre[1],
+    -quad_size + centre[0], -quad_size + centre[1],
+    -quad_size + centre[0], quad_size + centre[1]
   ];
 
   // Create a buffer to put three 2d clip space points in
@@ -64,13 +64,13 @@ function initializeAttributes(gl, program, quad_size) {
 
 }
 
-function initShaders(gl, vertex_name, frag_name) {
+function initShaders(vertex_name, frag_name) {
 
   let source = document.querySelector(vertex_name).innerHTML;
-  const vertexShader = loadShader(gl, gl.VERTEX_SHADER, source);
+  const vertexShader = loadShader(gl.VERTEX_SHADER, source);
 
   source = document.querySelector(frag_name).innerHTML;
-  const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, source);
+  const fragmentShader = loadShader(gl.FRAGMENT_SHADER, source);
 
   var program = gl.createProgram();
   gl.attachShader(program, vertexShader);
@@ -88,7 +88,7 @@ function initShaders(gl, vertex_name, frag_name) {
   return program;
 }
 
-function loadShader(gl, type, source) {
+function loadShader(type, source) {
   const shader = gl.createShader(type);
   gl.shaderSource(shader, source);
   gl.compileShader(shader);
@@ -105,7 +105,7 @@ function loadShader(gl, type, source) {
   return shader;
 }
 
-function loadTexture(gl, program, source) {
+function loadTexture(program, source) {
 
     const texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
@@ -117,6 +117,8 @@ function loadTexture(gl, program, source) {
     image.crossOrigin = "anonymous";
     image.src = source;
     image.onload = function() {
+
+      gl.useProgram(program);
 
       // Now that the image has loaded make copy it to the texture.
       gl.bindTexture(gl.TEXTURE_2D, texture);
@@ -139,12 +141,12 @@ function loadTexture(gl, program, source) {
 
       //resizeCanvastoImage(image.width, image.height);
 
-      render(gl, program);
+      render(gl);
     };
 
 }
 
-function resizeCanvastoImage(image_width, image_height){
+function resizeCanvastoImage(image_width, image_height) {
 
   let canvas_width = gl.canvas.width;
   let canvas_height = gl.canvas.height;
@@ -160,21 +162,22 @@ function resizeCanvastoImage(image_width, image_height){
 
 }
 
-function render(gl, program) {
+function render() {
 
   // Tell WebGL how to convert from clip space to pixels
   gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
-  // Clear the canvas
-  gl.clearColor(0, 0, 0, 0);
-  gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.enable(gl.CULL_FACE);
+  gl.enable(gl.DEPTH_TEST);
+
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
   //var texLocation = gl.getUniformLocation(program, "u_tex");
   //gl.activeTexture(gl.TEXTURE0);
   //gl.uniform1i(texLocation, 0);
 
   // Tell it to use our program (pair of shaders)
-  gl.useProgram(program);
+  gl.useProgram(bubble_program);
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
   gl.useProgram(magnifying_glass_program);
@@ -195,17 +198,18 @@ function handleMouseMove(event) {
   var mx = (x - canvasX) / elementX;
   var my = (y - canvasY) / elementY;
 
-  var mouseLoc= gl.getUniformLocation(bubble_program, "u_mouse");
-  //var mouseLoc02 = gl.getUniformLocation(magnifying_glass_program, "u_mouse");
   //image is flipped
   my = 1 - my;
 
-  gl.uniform2f(mouseLoc, mx, my);
-  render(gl, bubble_program);
+  gl.useProgram(bubble_program);
+  var mouseLoc01= gl.getUniformLocation(bubble_program, "u_mouse");
+  gl.uniform2f(mouseLoc01, mx, my);
 
-  //gl.uniform2f(mouseLoc02, mx, my);
-  //render(gl, magnifying_glass_program);
+  gl.useProgram(magnifying_glass_program);
+  var mouseLoc02 = gl.getUniformLocation(magnifying_glass_program, "u_mouse");
+  gl.uniform2f(mouseLoc02, mx, my);
 
+  render();
 
 }
 
