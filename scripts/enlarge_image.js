@@ -1,24 +1,51 @@
+function initInteractive(){
+  this.interact =  1;
+  console.log("loaded");
+}
+var myInstance = new initInteractive();
+
+function flipInteractive(){
+    if(myInstance.interact > 0){
+      myInstance.interact = 1;
+    }
+    else {
+      myInstance.interact = 0;
+    }
+}
+
 function enlarge(element, amount){
-  var image = element;
-  addSiblingBlur(image);
+  if(myInstance.interact == 1){
+    var image = element;
+    addSiblingBlur(image);
 
-  let scale = image.style.transform;
-  let scale_amount = "scale(" + amount + ")";
+    let scale = image.style.transform;
+    let scale_amount = "scale(" + amount + ")";
 
-  if(scale == scale_amount)
-    reduce(element);
-  else{
-    image.style.transform = scale_amount;
-    image.style.zIndex = "1";
+    if(scale == scale_amount)
+      reduce(element);
+    else{
+      image.animate([
+        { transform: "scale(1)", easing: 'ease-out' },
+        { transform: scale_amount, easing: 'ease-in' }],
+        50).finished.then(() => { image.style.transform = scale_amount;});
+
+      //image.style.transform = scale_amount;
+      image.style.zIndex = "1";
+    }
   }
-
 }
 
 function reduce(element){
   var image = element;
   removeSiblingBlur(image);
 
-  image.style.transform = "scale(1)";
+  let scale = image.style.transform;
+
+  image.animate([
+    { transform: scale, easing: 'ease-out' },
+    { transform: "scale(1)", easing: 'ease-in' }],
+    50).finished.then(() => { image.style.transform = "scale(1)";});
+  //image.style.transform = "scale(1)";
 }
 
 function addSiblingBlur(element){

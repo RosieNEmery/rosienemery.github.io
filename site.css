@@ -72,7 +72,7 @@ footer {
 
 .row {
   width: 100%;
-  clear: both;
+  clear: none;
   overflow: hidden;
 }
 
@@ -541,21 +541,21 @@ footer {
 }
 
 .gallery {
-  display: grid;
-  gap: 10px;
-  width: calc(2*50% + 2*10px);
-  grid-template-columns: repeat(2,auto);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /*gap: 10px;*/
+  /*width: calc(3*30% + 2*10px);
+  grid-template-columns: repeat(3,auto);*/
 
-  justify-content: center;
   align-items: center;
   transition: 1s;
 }
 
 .gallery_img{
-  display: block;
-  width: 100%;
-  margin-top: 8px;
-  position: relative;
+  width: calc(50vh - 20px );
+  margin: 8px;
+  /*position: relative;*/
 }
 
 .gallery_img:hover{
