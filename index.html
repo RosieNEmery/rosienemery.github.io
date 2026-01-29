@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html style = "background-color: #000000;">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -20,25 +20,38 @@
     <script defer src="https://cloud.umami.is/script.js" data-website-id="90b8b0b2-7fdd-4c2c-a6d8-8cee4e1a0ac2"></script>
   </head>
 
-  <body class=""><header>
+  <body class="" onload="CheckAspectRatio()" onresize="CheckAspectRatio()"><header>
 
     <div class ="row">
       <div class="left-nav">
-        <a href="./index">Rosie Emery</a>
+        <a href="./index" style = "color:white;">Rosie Emery</a>
       </div>
 
       <ul class = "menu">
-        <li><a href="./work">Work</a></li>
-        <li><a href="./play">Play</a></li>
-        <li><a href="./reel">Reel</a></li>
-        <li><a href="./about">About</a></li>
+        <li><a href="./work" style = "color:white;">Work</a></li>
+        <li><a href="./play" style = "color:white;">Play</a></li>
+        <li><a href="./reel" style = "color:white;">Reel</a></li>
+        <li><a href="./about" style = "color:white;">About</a></li>
         <li><a href = "https://www.instagram.com/re.anksha/" target="_blank" rel="noopener noreferrer">
-              <img class = "insta_icon" src = "./Images/insta_icon.png">
+              <img class = "insta_icon" style= "filter:invert(100%);" src = "./Images/insta_icon.png">
             </a>
         </li>
       </ul>
     </div>
   </header>
+
+  <video class = "bg-video-desktop" autoplay muted loop>
+         <source src ="Images/Sizzle_Reel_2026_v02.webm" type="video/webm">
+          Sorry, your browser doesn't support HTML5 video.
+  </video>
+
+  <video class = "bg-video-mobile" autoplay muted loop>
+         <source src ="Images/Sizzle_Reel_2026_v02_portrait.webm" type="video/webm">
+          Sorry, your browser doesn't support HTML5 video.
+  </video>
+
+
+<!-- slideshow setup
 
   <div class="slideshow-container" onmouseleave="resumeSlides.call()"
     onmouseover="pauseSlides()">
@@ -90,6 +103,8 @@
   </div>
 
   <script src="scripts/slideshow.js"></script>
+-->
 
+  <script src="scripts/index.js"></script>
 </body>
 </html>
